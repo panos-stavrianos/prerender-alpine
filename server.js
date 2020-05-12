@@ -4,7 +4,7 @@ const server = prerender({
   forwardHeaders: true,
   chromeLocation: '/usr/bin/chromium-browser'
 });
-
+server.use(require('prerender-memory-cache'))
 server.use(prerender.blacklist());
 server.use(prerender.httpHeaders());
 server.use(prerender.removeScriptTags());
